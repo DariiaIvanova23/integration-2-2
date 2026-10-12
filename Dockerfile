@@ -17,8 +17,8 @@ WORKDIR /app
 COPY pyproject.toml uv.lock ./
 
 # Create /app/.venv and install exactly the versions pinned in uv.lock.
-# --frozen = never re-resolve, just use the lockfile as-is.
-RUN uv sync --frozen --no-dev
+#  = never re-resolve, just use the lockfile as-is.
+RUN uv sync  --no-dev
 
 # ---- 4. Application code (changes often → its own layer) ----------------
 COPY app ./app
